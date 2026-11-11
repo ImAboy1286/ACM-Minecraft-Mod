@@ -1,0 +1,30 @@
+# Gradle and Fabric Loom caches
+.gradle/
+build/
+bin/
+
+# Minecraft development run output
+run/
+logs/
+crash-reports/
+*.log
+
+# IDE metadata
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.vscode/
+
+# Local machine and environment files
+.env
+.env.*
+!.env.example
+gradle-local.properties
+local.properties
+
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini

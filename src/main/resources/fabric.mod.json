@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "acm",
+  "version": "${version}",
+  "name": "ACM Open Source Minecraft Mod",
+  "description": "A framework for adding blocks, mobs, and vanilla gameplay extensions.",
+  "authors": [
+    "ACM Contributors"
+  ],
+  "license": "MIT",
+  "icon": "assets/acm/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.acm.AcmMod"
+    ],
+    "client": [
+      "com.acm.client.AcmClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
