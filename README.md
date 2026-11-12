@@ -1,9 +1,10 @@
 # ACM Open Source Minecraft Mod
 
-ACM is an intentionally empty Fabric 1.21.1 mod framework. The project
-contains the build configuration and entrypoints needed to begin adding
-Minecraft content, but it currently registers no custom blocks, items,
-entities, or gameplay changes.
+ACM is a Fabric 1.21.1 mod framework. Its first gameplay change extends
+vanilla beacons with Saturation as an additional primary effect at beacon
+tier 3 or higher and as a level II secondary effect at tier 4. The project
+also contains the build configuration and entrypoints needed to add more
+Minecraft content.
 
 ## Requirements
 
@@ -39,9 +40,6 @@ On Windows, the default mods directory is:
 %APPDATA%\.minecraft\mods
 ```
 
-Because this framework has no gameplay content, installing it currently only
-verifies that the mod loads successfully.
-
 ## Live development updates
 
 Run the isolated Fabric development client with:
@@ -68,8 +66,12 @@ while a game is running.
 └── src/main
     ├── java/com/acm
     │   ├── AcmMod.java             Server/common Fabric entrypoint
-    │   └── client/AcmClient.java   Client-only Fabric entrypoint
+    │   ├── client/AcmClient.java   Client-only Fabric entrypoint
+    │   └── mixin/
+    │       └── BeaconBlockEntityMixin.java
+    │                                  Adds Saturation to tier-3 beacon choices
     └── resources
+        ├── acm.mixins.json          Mixin configuration
         └── fabric.mod.json          Fabric metadata and entrypoints
 ```
 
@@ -90,7 +92,14 @@ features are introduced.
 
 ### Vanilla Changes
 
-None. No existing blocks, items, entities, or gameplay rules are modified.
+- Tier-3 and tier-4 beacons can select Saturation as their primary effect.
+- A tier-4 beacon can select Saturation as its secondary effect, and it applies
+  Saturation at level II.
+- Saturation selections are accepted by the same validation used for saved
+  vanilla beacon effects.
+- Saturation uses vanilla beacon range, application interval, and duration.
+- The change is applied through a targeted `BeaconBlockEntity` mixin without
+  changing beacon geometry or timing.
 
 ### New Blocks
 

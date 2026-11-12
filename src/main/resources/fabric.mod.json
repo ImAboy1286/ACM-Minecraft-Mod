@@ -18,6 +18,9 @@
       "com.acm.client.AcmClient"
     ]
   },
+  "mixins": [
+    "acm.mixins.json"
+  ],
   "depends": {
     "fabricloader": ">=0.16.5",
     "minecraft": "~1.21.1",
