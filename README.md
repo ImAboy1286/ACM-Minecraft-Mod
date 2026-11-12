@@ -1,10 +1,10 @@
 # ACM Open Source Minecraft Mod
 
-ACM is a Fabric 1.21.1 mod framework. Its first gameplay change extends
-vanilla beacons with Saturation as an additional primary effect at beacon
-tier 3 or higher and as a level II secondary effect at tier 4. The project
-also contains the build configuration and entrypoints needed to add more
-Minecraft content.
+ACM is a Fabric 1.21.1 mod framework. Its first gameplay changes extend
+vanilla beacons with additional layers and Saturation as an additional
+primary effect at beacon tier 3 or higher and as a level II secondary effect
+at tier 4. The project also contains the build configuration and entrypoints
+needed to add more Minecraft content.
 
 ## Requirements
 
@@ -69,7 +69,7 @@ while a game is running.
     │   ├── client/AcmClient.java   Client-only Fabric entrypoint
     │   └── mixin/
     │       └── BeaconBlockEntityMixin.java
-    │                                  Adds Saturation to tier-3 beacon choices
+    │                                  Extends beacon layers and effects
     └── resources
         ├── acm.mixins.json          Mixin configuration
         └── fabric.mod.json          Fabric metadata and entrypoints
@@ -98,7 +98,12 @@ features are introduced.
 - Saturation selections are accepted by the same validation used for saved
   vanilla beacon effects.
 - Saturation uses vanilla beacon range, application interval, and duration.
-- The change is applied through a targeted `BeaconBlockEntity` mixin without
+- Beacon pyramids can extend beyond four layers.
+- Beacon range remains `10 × level + 10` blocks: five layers reach 60 blocks,
+  and ten layers reach 110 blocks.
+- The beacon continues scanning only valid beacon-base blocks and stops at
+  the world's lower build limit.
+- The changes are applied through a targeted `BeaconBlockEntity` mixin without
   changing beacon geometry or timing.
 
 ### New Blocks
