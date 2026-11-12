@@ -10,6 +10,6 @@ public final class AcmMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        LOGGER.info("ACM framework initialized; no gameplay content is registered");
+        LOGGER.info("ACM framework initialized; vanilla beacon extensions are active");
     }
 }

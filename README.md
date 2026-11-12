@@ -2,8 +2,9 @@
 
 ACM is a Fabric 1.21.1 mod framework. Its first gameplay change extends
 vanilla beacons with Saturation as an additional primary effect at beacon
-tier 3 or higher. The project also contains the build configuration and
-entrypoints needed to add more Minecraft content.
+tier 3 or higher and as a level II secondary effect at tier 4. The project
+also contains the build configuration and entrypoints needed to add more
+Minecraft content.
 
 ## Requirements
 
@@ -92,8 +93,13 @@ features are introduced.
 ### Vanilla Changes
 
 - Tier-3 and tier-4 beacons can select Saturation as their primary effect.
-- The change is applied to vanilla beacon effect choices through a targeted
-  `BeaconBlockEntity` mixin.
+- A tier-4 beacon can select Saturation as its secondary effect, and it applies
+  Saturation at level II.
+- Saturation selections are accepted by the same validation used for saved
+  vanilla beacon effects.
+- Saturation uses vanilla beacon range, application interval, and duration.
+- The change is applied through a targeted `BeaconBlockEntity` mixin without
+  changing beacon geometry or timing.
 
 ### New Blocks
 
