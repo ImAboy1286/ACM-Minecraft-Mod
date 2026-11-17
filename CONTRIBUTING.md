@@ -147,9 +147,7 @@ the development client and describe what you checked in your pull request.
 
 ### Issues
 
-- Ensure your issue gives a full and helpful description of what the problem, suggested improvement, or request is.
-- Make sure to tag your issue with the appropriate labels!
-- If this is your first issue (adding yourself as a contributor), add the "good first issue" label along with the automatically added "documentation" label.
+- Ensure your issue gives enough detail to reliably reproduce the issue or clearly outline the suggested improvement.
 
 ### Branches
 
