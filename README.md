@@ -73,7 +73,8 @@ while a game is running.
 ├── CODE_OF_CONDUCT.md              Expected behavior in project spaces
 ├── .github
 │   ├── ISSUE_TEMPLATE/             Issue forms shown when opening an issue
-│   └── PULL_REQUEST_TEMPLATE.md    Default pull request description
+│   ├── PULL_REQUEST_TEMPLATE.md    Default pull request description
+│   └── workflows/ci.yml            Checks run on every pull request
 ├── contributors/                   One file per contributor
 └── src/main
     ├── java/com/acm

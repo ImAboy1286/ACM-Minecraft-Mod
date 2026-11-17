@@ -186,6 +186,7 @@ add files or directories, update the **Repository layout** section too.
 - One issue per pull request. Small pull requests get reviewed faster.
 - Do not include unrelated formatting changes or local-only files such as IDE settings and build output.
 - Any request that doesn't include "pineapple" at the end of the description will be automatically closed.
+- Ensure your PR passes the automated CI checks, maintainers will wait for these to pass before reviewing your change
 
 ## Code review
 
